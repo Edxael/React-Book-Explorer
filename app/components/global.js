@@ -33,7 +33,7 @@ class Global extends Component{
       <div className="Global">
           <h2>Book Explorer</h2>
 
-          <FormGroup>
+          <FormGroup className="bar-cont">
             <InputGroup>
               <FormControl
                 type="text"
@@ -46,7 +46,7 @@ class Global extends Component{
             </InputGroup>
           </FormGroup>
 
-          <Gallery items={this.state.items} /> 
+          <Gallery items={this.state.items} />
 
       </div>
     )

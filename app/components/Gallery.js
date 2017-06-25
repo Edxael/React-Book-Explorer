@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
 
 
+
 class Gallery extends Component {
   render(){
+    let altpic = 'http://www.pngmart.com/files/1/Book-PNG-HD.png';
+
     return(
       <div>
       {
         this.props.items.map((item, index) => {
-          let {title, imageLinsks, infoLink} = item.volumeInfo;
+          let {title, imageLinks, infoLink} = item.volumeInfo;
           return (
-            <div key={index}>
+            <a
+              key={index}
+              className="book"
+              href={infoLink}
+              target="_blank"
+            >
               <img
-                 src={imageLinsks !== undefined ? imageLinsks.thumnail alt="book image" : ''} />
-              {title}
-            </div>
+                 src={imageLinks !== undefined ? imageLinks.thumbnail : altpic }
+                  alt="book image"
+                  className="book-img"
+                 />
+               <div className="book-text">
+                 {title}
+               </div>
+            </a>
           )
         })
       }
